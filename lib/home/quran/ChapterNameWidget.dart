@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c9_sat/chapter_details/ChapterDetails.dart';
 
+
 class ChapterNameWidget extends StatelessWidget {
   String name;
   int index;

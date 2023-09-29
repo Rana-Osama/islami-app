@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_c9_sat/home/hadeth/HadethTitleWidget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'Hadeth.dart';
 
@@ -29,7 +30,7 @@ class _HadethTabState extends State<HadethTab> {
                     horizontal: BorderSide(
                         color: Theme.of(context).dividerColor, width: 2))),
           child: Text(
-            'Hadeth',
+            AppLocalizations.of(context)!.hadeth,
             style: Theme.of(context).textTheme.titleMedium,
           ),),
         Expanded(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c9_sat/home/settings/LanguageBottomSheet.dart';
 import 'package:islami_c9_sat/home/settings/ThemeBottomSheet.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsTab extends StatefulWidget {
 
@@ -20,7 +21,7 @@ class _SettingsTabState extends State<SettingsTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Theme:'),
+          Text(AppLocalizations.of(context)!.theme),
           InkWell(
             onTap: (){
               showThemeBottomSheet();
@@ -37,12 +38,12 @@ class _SettingsTabState extends State<SettingsTab> {
                   width: 1
                 )
               ),
-                child: Text('Light',style: Theme.of(context).textTheme.titleMedium,)),
+                child: Text(AppLocalizations.of(context)!.light_theme,style: Theme.of(context).textTheme.titleMedium,)),
           ),
 
           SizedBox(height: 20,),
 
-          Text('Language:'),
+          Text(AppLocalizations.of(context)!.language),
           InkWell(
             onTap: (){
               showLanguageBottomSheet();

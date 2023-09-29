@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeBottomSheet extends StatefulWidget {
   
@@ -16,8 +17,8 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          getSelectedItem('Light'),
-          getUnselectedItem('Dark')
+          getSelectedItem(AppLocalizations.of(context)!.light_theme),
+          getUnselectedItem(AppLocalizations.of(context)!.dark_theme)
         ],
       ),
     );

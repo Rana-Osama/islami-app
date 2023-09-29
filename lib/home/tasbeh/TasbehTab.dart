@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../MyThemeData.dart';
 
@@ -45,7 +46,7 @@ class _TasbehTabState extends State<TasbehTab> {
             ],
           ),
 
-          Text('Number of tasbehat',style:Theme.of(context).textTheme.titleMedium,),
+          Text( AppLocalizations.of(context)!.no_tasbeh,style:Theme.of(context).textTheme.titleMedium,),
           Container(
             margin: EdgeInsets.all(15),
             child:TextButton(
