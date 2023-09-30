@@ -7,6 +7,8 @@ import 'package:islami_c9_sat/chapter_details/ChapterDetails.dart';
 import 'package:islami_c9_sat/home/HomeScreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_c9_sat/providers/SettingsProvider.dart';
+import 'package:provider/provider.dart';
 
 import 'SplashScreen.dart';
 
@@ -15,7 +17,8 @@ void main() {
     home: const SplashScreen(),
   ));
   Timer(const Duration(seconds: 2), () {
-    runApp(MyApp());
+    runApp(ChangeNotifierProvider(
+        create: (buildContext) => SettingsProvider(), child: MyApp()));
   });
 }
 
@@ -25,12 +28,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    //search forr settings provider inside widgets tree
+    //by default listen for changes in settings provider
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       title: 'Islami App',
       theme: MyThemeData.LightTheme,
       darkTheme: MyThemeData.DarkTheme,
-      themeMode: ThemeMode.dark
-      ,
+      //data in settings provider
+      themeMode: settingsProvider.currentTheme,
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),
         ChapterDetailsScreen.routeName: (_) => ChapterDetailsScreen(),
@@ -49,7 +55,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('ar'), // Arabic
       ],
-      locale: Locale('en'),
+      locale: Locale(settingsProvider.currentLocale),
     );
   }
 }

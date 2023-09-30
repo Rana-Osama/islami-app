@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class MyThemeData {
-  static bool isDarkEnabled = true;
-
   static const Color lightPrimary = Color(0xFFB7935F);
   static const Color darkPrimary = Color(0xFF141A2E);
   static const Color darkSecondary = Color(0xFFFACC1D);
@@ -20,7 +18,6 @@ class MyThemeData {
       useMaterial3: true,
       appBarTheme: const AppBarTheme(
         iconTheme: IconThemeData(color: Colors.black),
-
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -44,10 +41,8 @@ class MyThemeData {
           color: Colors.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(18))),
-      bottomSheetTheme:const BottomSheetThemeData(
-          backgroundColor: Colors.white
-      )
-  );
+      bottomSheetTheme:
+          const BottomSheetThemeData(backgroundColor: Colors.white));
 
   static ThemeData DarkTheme = ThemeData(
       textTheme: const TextTheme(
@@ -87,8 +82,6 @@ class MyThemeData {
           // surfaceTintColor: Colors.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(18))),
-        bottomSheetTheme:const BottomSheetThemeData(
-      backgroundColor: darkPrimary
-    )
-  );
+      bottomSheetTheme:
+          const BottomSheetThemeData(backgroundColor: darkPrimary));
 }
