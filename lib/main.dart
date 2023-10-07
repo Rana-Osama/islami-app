@@ -12,13 +12,17 @@ import 'package:provider/provider.dart';
 
 import 'SplashScreen.dart';
 
-void main() {
+void main()  {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MaterialApp(
     home:  SplashScreen(),
   ));
-  Timer(const Duration(seconds: 2), () {
+  Timer(const Duration(seconds: 2), () async{
+    var provider = SettingsProvider();
+    await provider.loadTheme();
+    await provider.loadLocal();
     runApp(ChangeNotifierProvider(
-        create: (buildContext) => SettingsProvider(), child: MyApp()));
+        create: (buildContext) => provider, child: MyApp()));
   });
 }
 
