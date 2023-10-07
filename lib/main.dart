@@ -14,7 +14,7 @@ import 'SplashScreen.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: const SplashScreen(),
+    home:  SplashScreen(),
   ));
   Timer(const Duration(seconds: 2), () {
     runApp(ChangeNotifierProvider(
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),
         ChapterDetailsScreen.routeName: (_) => ChapterDetailsScreen(),
-        HadethDetailsScreen.routeName: (_) => HadethDetailsScreen()
+        HadethDetailsScreen.routeName: (_) => HadethDetailsScreen(),
       },
       initialRoute: HomeScreen.routeName,
 
