@@ -55,7 +55,6 @@ class MyApp extends StatelessWidget {
             HomeScreen.routeName: (_) => HomeScreen(),
             ChapterDetailsScreen.routeName: (_) => ChapterDetailsScreen(),
             HadethDetailsScreen.routeName: (_) => HadethDetailsScreen(),
-
           },
           initialRoute: HomeScreen.routeName,
           localizationsDelegates: [

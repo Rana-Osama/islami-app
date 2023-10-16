@@ -66,21 +66,15 @@ class SettingsProvider extends ChangeNotifier {
     await sharedPreferences?.setString('local', localStr);
   }
 
-
   String? getLocale() {
     return sharedPreferences!.getString('local');
   }
-
 
   Future<void> loadLocal() async {
     sharedPreferences = await SharedPreferences.getInstance();
     String? oldLocal = getLocale();
     if (oldLocal != null) {
-      oldLocal == 'English'
-          ? currentLocale = 'en'
-          : currentLocale = 'ar';
+      oldLocal == 'English' ? currentLocale = 'en' : currentLocale = 'ar';
     }
   }
-
-
 }

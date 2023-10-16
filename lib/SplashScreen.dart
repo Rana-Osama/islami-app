@@ -11,23 +11,21 @@ class SplashScreen extends StatelessWidget {
     return FutureBuilder(
       future: provider.loadTheme(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting){
+        if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
             child: CircularProgressIndicator(),
           );
-        }
-        else {
+        } else {
           String? theme = provider.getTheme();
           return Scaffold(
             body: theme == 'Light'
                 ? Image.asset('assets/images/splash.png',
-                height: double.infinity, width: double.infinity)
+                    height: double.infinity, width: double.infinity)
                 : Image.asset('assets/images/splash_dark.png',
-                height: double.infinity, width: double.infinity),
+                    height: double.infinity, width: double.infinity),
           );
         }
       },
-
     );
   }
 }
